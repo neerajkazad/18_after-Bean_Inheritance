@@ -9,7 +9,7 @@ public class Car {
 	private String color;
 	private String fuelType;
 
-	//Case1:
+	//Case1: For Setter Injection
 	/*public void setId(int id) {
 		System.out.println("Id: "+id);
 		this.id = id;
@@ -31,14 +31,9 @@ public class Car {
 	public void setFuelType(String fuelType) {
 		this.fuelType = fuelType;
 	}*/
-
 	
-	@Override
-	public String toString() {
-		return "Car [id=" + id + ", model=" + model + ", manufecture=" + manufecture + ", color=" + color
-				+ ", fuelType=" + fuelType + "]";
-	}
-
+	//Case2: For Constructor Injection
+	
 	@ConstructorProperties({"id","model","manufecture","color","fuelType"})
 	public Car(int id, String model, String manufecture, String color, String fuelType) {
 		super();
@@ -48,6 +43,13 @@ public class Car {
 		this.color = color;
 		this.fuelType = fuelType;
 	}
+	
+	@Override
+	public String toString() {
+		return "Car [id=" + id + ", model=" + model + ", manufecture=" + manufecture + ", color=" + color
+				+ ", fuelType=" + fuelType + "]";
+	}
+
 
 	
 }
