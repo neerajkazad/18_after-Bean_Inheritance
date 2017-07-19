@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Case1:  -->
+	<!-- <bean id="baseCar" class="com.bi.beans.Car" abstract="true">
+		<property name="id" value="25" />
+		<property name="model" value="swift" />
+		<property name="manufecture" value="maruthi" />
+		<property name="fuelType" value="petrol" />
+		<property name="color" value="red" />
+	</bean>
+	
+	<bean id="car1" class="com.bi.beans.Car" parent="baseCar">
+		<property name="id" value="25" />
+		
+	</bean>
+	
+	<bean id="car2" class="com.bi.beans.Car" parent="baseCar">
+		<property name="id" value="26" />
+	</bean> -->
+	<!-- Case2: Using constructor injection  -->
+	<!-- <bean id="baseCar" class="com.bi.beans.Car">
+		<constructor-arg value="25" index="0"/>
+		<constructor-arg value="swift" index="1"/>
+		<constructor-arg value="maruthi" index="2"/>
+		<constructor-arg value="red" index="3"/>
+		<constructor-arg value="petrol" index="4"/>
+	</bean>
+	<bean id="car1" class="com.bi.beans.Car" parent="baseCar">
+		<constructor-arg value="26" index="0" />
+	</bean> -->
+	
+	<!-- Case3: same as case2 instead of index we are using "name"  -->
+	<bean id="baseCar" class="com.bi.beans.Car">
+		<constructor-arg value="25" name="id"/>
+		<constructor-arg value="swift" name="model"/>
+		<constructor-arg value="maruthi" name="manufecture"/>
+		<constructor-arg value="red" name="color"/>
+		<constructor-arg value="petrol" name="fuelType"/>
+	</bean>
+	<bean id="car1" class="com.bi.beans.Car" parent="baseCar">
+		<constructor-arg value="26" name="id"/>
+	</bean>
+	<!-- <bean id="bus" class="com.bi.beans.Bus" parent="car1">
+		<property name="id" value="27"/>
+	</bean> -->
+
+</beans>
